@@ -10,5 +10,11 @@ public class LoopDemo {
         System.out.println();
         DoWhileRepeater dw = new DoWhileRepeater();
         dw.printTimes(3);
+        System.out.println();
+        EnhancedForLoopRepeaterInt enFI = new EnhancedForLoopRepeaterInt();
+        enFI.printTimes();
+        System.out.println();
+        EnhancedForLoopRepeaterString enFIS = new EnhancedForLoopRepeaterString();
+        enFIS.printTimes();
     }
 }

@@ -1,6 +1,6 @@
 package com.gilead.sep.one;
 
-public class EnhancedForLoopRepeater {
+public class EnhancedForLoopRepeaterInt {
     public void printTimes() {
         int[] intArr = {1, 2, 3, 4, 5};
         //enhanced for loop

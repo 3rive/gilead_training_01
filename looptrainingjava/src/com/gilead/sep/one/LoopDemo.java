@@ -16,5 +16,12 @@ public class LoopDemo {
         System.out.println();
         EnhancedForLoopRepeaterString enFIS = new EnhancedForLoopRepeaterString();
         enFIS.printTimes();
+        System.out.println();
+        HalfLoopRepeater hlf = new HalfLoopRepeater();
+        hlf.printHalfTimes(10);
+        System.out.println();
+        TwiceLoopIterator tli = new TwiceLoopIterator();
+        tli.printTwiceTimes(5);
+        System.out.println();
     }
 }

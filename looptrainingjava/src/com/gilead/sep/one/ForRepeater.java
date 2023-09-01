@@ -1,12 +1,10 @@
 package com.gilead.sep.one;
 
-public class WhileRepeater {
-    //while
+public class ForRepeater {
     public void printTimes(int times){
-        int i =1;
-        while(i <= times){
+        for ( int i = 1; i<=times; i++){
             System.out.print(i+"  ");
-            i++;
         }
+
     }
 }

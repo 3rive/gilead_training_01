@@ -2,10 +2,13 @@ package com.gilead.sep.one;
 
 public class LoopDemo {
     public static void main(String[] args) {
-        Repeater r = new Repeater();
-        r.printTimes(5);
+        ForRepeater r = new ForRepeater();
+        r.printTimes(3);
         System.out.println();
         WhileRepeater w = new WhileRepeater();
-        w.printTimes(10);
+        w.printTimes(3);
+        System.out.println();
+        DoWhileRepeater dw = new DoWhileRepeater();
+        dw.printTimes(3);
     }
 }

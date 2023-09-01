@@ -1,10 +1,11 @@
 package com.gilead.sep.one;
 
-public class Repeater {
+public class DoWhileRepeater {
     public void printTimes(int times){
-        for ( int i = 1; i<=times; i++){
+        int i=1;
+        do {
             System.out.print(i+"  ");
-        }
-
+            i++;
+        }while(i <=times);
     }
 }

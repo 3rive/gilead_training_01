@@ -4,10 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="39f3dd55-6d47-4cfb-afaa-4d0fc034f694" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/exceptions_training/src/com/gilead/training/august/thirty/Calculator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exceptions_training/src/com/gilead/training/august/thirty/CalculatorImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exceptions_training/src/com/gilead/training/august/thirty/ExceptionMain.java" beforeDir="false" />
+    <list default="true" id="f0585ea7-e41a-4ec6-850e-793eeed1a340" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea/.idea.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/IdeaProjects.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gilead_training_01" beforeDir="false" afterPath="$PROJECT_DIR$/gilead_training_01" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gilead_training_01/exceptions_training/src/com/gilead/training/august/thirty/Calculator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gilead_training_01/exceptions_training/src/com/gilead/training/august/thirty/CalculatorImpl.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,25 +30,25 @@
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
   </component>
-  <component name="ProjectId" id="2UjeaNDOQaAv74wtOZvwPWyQbCO" />
+  <component name="ProjectId" id="2Up4dMvyoMMgdMA2gKg5RBvZmVX" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/HP/IdeaProjects"
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="39f3dd55-6d47-4cfb-afaa-4d0fc034f694" name="Changes" comment="" />
-      <created>1693457480109</created>
+      <changelist id="f0585ea7-e41a-4ec6-850e-793eeed1a340" name="Changes" comment="" />
+      <created>1693623280208</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1693457480109</updated>
+      <updated>1693623280208</updated>
     </task>
     <servers />
   </component>

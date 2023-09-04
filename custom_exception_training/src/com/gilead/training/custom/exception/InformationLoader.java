@@ -5,7 +5,7 @@ public class InformationLoader {
         VoterCard bevinVoteCard = new VoterCard();
         bevinVoteCard.setVoterID("12345");
         Address bevinAddress = new Address();
-        bevinAddress.setCountry("India");
+        bevinAddress.setCountry("Australia");
         bevinAddress.setState("Tamilnadu");
         bevinAddress.setDistrict("Thoothukudi");
         bevinAddress.setStreetName("Car Street");

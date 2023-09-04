@@ -4,17 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0585ea7-e41a-4ec6-850e-793eeed1a340" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea/.idea.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/IdeaProjects.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="30b6d0ef-adce-4e5e-aff0-530792ad7cef" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/custom_exception_training/src/com/gilead/training/custom/exception/NotaCitizenOfIndiaException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom_exception_training/src/com/gilead/training/custom/exception/VoterUnderAgeException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gilead_training_01/javatraining/javatraining1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gilead_training_01/training_26_06/training_26_061.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/custom_exception_training/src/com/gilead/training/custom/exception/Eligible.java" beforeDir="false" afterPath="$PROJECT_DIR$/custom_exception_training/src/com/gilead/training/custom/exception/Eligible.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/custom_exception_training/src/com/gilead/training/custom/exception/InformationLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/custom_exception_training/src/com/gilead/training/custom/exception/InformationLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/custom_exception_training/src/com/gilead/training/custom/exception/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/custom_exception_training/src/com/gilead/training/custom/exception/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/custom_exception_training/src/com/gilead/training/custom/exception/VotingMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/custom_exception_training/src/com/gilead/training/custom/exception/VotingMachine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gilead_training_01" beforeDir="false" afterPath="$PROJECT_DIR$/gilead_training_01" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gilead_training_01/exceptions_training/src/com/gilead/training/august/thirty/Calculator.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/gilead_training_01/exceptions_training/src/com/gilead/training/august/thirty/CalculatorImpl.java" beforeDir="false" />
@@ -24,13 +24,26 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="9joonhev" />
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
   </component>
-  <component name="ProjectId" id="2Up4dMvyoMMgdMA2gKg5RBvZmVX" />
+  <component name="ProjectId" id="2UugbuAFTQJpQkjH6YYsdAnLEyK" />
+  <component name="ProjectLevelVcsManager">
+    <OptionsSetting value="false" id="Update" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -38,18 +51,61 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.gilead.training.custom.exception.Main" />
+      <module name="custom_exception_training" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.gilead.training.custom.exception.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f0585ea7-e41a-4ec6-850e-793eeed1a340" name="Changes" comment="" />
-      <created>1693623280208</created>
+      <changelist id="30b6d0ef-adce-4e5e-aff0-530792ad7cef" name="Changes" comment="" />
+      <created>1693794955642</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1693623280208</updated>
+      <updated>1693794955642</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/custom_exception_training/src/com/gilead/training/custom/exception/Main.java</url>
+          <line>10</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/custom_exception_training/src/com/gilead/training/custom/exception/Main.java</url>
+          <line>17</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/custom_exception_training/src/com/gilead/training/custom/exception/VotingMachine.java</url>
+          <line>9</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

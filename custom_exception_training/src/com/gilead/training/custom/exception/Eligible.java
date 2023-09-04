@@ -2,11 +2,7 @@ package com.gilead.training.custom.exception;
 
 public interface Eligible {
 
-    public boolean isEligibleToVote(VoterCard card);
+    public void isCitizen(VoterCard card) throws NotaCitizenOfIndiaException;
 
-    public boolean isCitizen(VoterCard card);
-
-    public boolean isUnderAge(int age);
-
-    public boolean canVote(VoterCard card, int age);
+    public void isUnderAge(int age) throws VoterUnderAgeException;
 }

@@ -7,7 +7,6 @@
     <list default="true" id="30b6d0ef-adce-4e5e-aff0-530792ad7cef" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/gilead_training_01/javatraining/javatraining1.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/gilead_training_01/training_26_06/training_26_061.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gilead_training_01" beforeDir="false" afterPath="$PROJECT_DIR$/gilead_training_01" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gilead_training_01/exceptions_training/src/com/gilead/training/august/thirty/Calculator.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/gilead_training_01/exceptions_training/src/com/gilead/training/august/thirty/CalculatorImpl.java" beforeDir="false" />
@@ -30,6 +29,9 @@
   <component name="MacroExpansionManager">
     <option name="directoryName" value="9joonhev" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
   </component>
@@ -41,14 +43,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.gilead.training.custom.exception.Main" />

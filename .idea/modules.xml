@@ -2,17 +2,14 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/gilead_training_01/Scala_Training/Scala_Training.iml" filepath="$PROJECT_DIR$/gilead_training_01/Scala_Training/Scala_Training.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Scala_Training/Scala_Training1.iml" filepath="$PROJECT_DIR$/Scala_Training/Scala_Training1.iml" />
-      <module fileurl="file://$PROJECT_DIR$/gilead_training_01/calculator/calculator.iml" filepath="$PROJECT_DIR$/gilead_training_01/calculator/calculator.iml" />
-      <module fileurl="file://$PROJECT_DIR$/calculator/calculator1.iml" filepath="$PROJECT_DIR$/calculator/calculator1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Math_Function_Training/Math_Function_Training.iml" filepath="$PROJECT_DIR$/Math_Function_Training/Math_Function_Training.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Scala_Training/Scala_Training.iml" filepath="$PROJECT_DIR$/Scala_Training/Scala_Training.iml" />
+      <module fileurl="file://$PROJECT_DIR$/calculator/calculator.iml" filepath="$PROJECT_DIR$/calculator/calculator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/collection_training/collection_training.iml" filepath="$PROJECT_DIR$/collection_training/collection_training.iml" />
       <module fileurl="file://$PROJECT_DIR$/custom_exception_training/custom_exception_training.iml" filepath="$PROJECT_DIR$/custom_exception_training/custom_exception_training.iml" />
-      <module fileurl="file://$PROJECT_DIR$/gilead_training_01/exceptions_training/exceptions_training.iml" filepath="$PROJECT_DIR$/gilead_training_01/exceptions_training/exceptions_training.iml" />
       <module fileurl="file://$PROJECT_DIR$/javatraining/javatraining.iml" filepath="$PROJECT_DIR$/javatraining/javatraining.iml" />
-      <module fileurl="file://$PROJECT_DIR$/gilead_training_01/javatraining/javatraining1.iml" filepath="$PROJECT_DIR$/gilead_training_01/javatraining/javatraining1.iml" />
       <module fileurl="file://$PROJECT_DIR$/looptrainingjava/looptrainingjava.iml" filepath="$PROJECT_DIR$/looptrainingjava/looptrainingjava.iml" />
       <module fileurl="file://$PROJECT_DIR$/training_26_06/training_26_06.iml" filepath="$PROJECT_DIR$/training_26_06/training_26_06.iml" />
-      <module fileurl="file://$PROJECT_DIR$/gilead_training_01/training_26_06/training_26_061.iml" filepath="$PROJECT_DIR$/gilead_training_01/training_26_06/training_26_061.iml" />
     </modules>
   </component>
 </project>

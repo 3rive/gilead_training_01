@@ -3,6 +3,7 @@ package com.gilead.collections.training;
 import java.util.*;
 
 public class Main {
+
     public static void main(String[] args) {
         Student student1 = createStudent(1,"Bevin","Male");
         Student student2 = createStudent(2,"Abinaya","Female");
@@ -11,7 +12,7 @@ public class Main {
         Student student5 = createStudent(5,"Alan","Male");
         Student student6 = createStudent(2,"Thanasekar","Male");
         //ArrayList --. Dynamic Array --> List can allow duplicate objects
-/*
+
         List<Student> students_of_12 = new ArrayList<Student>();
         students_of_12.add(student1);
         students_of_12.add(student2);
@@ -28,7 +29,6 @@ public class Main {
         System.out.println("Names of Students in XII- B through list:  ");
         for (Student student_of_12 : students_of_12){
             System.out.print(students_of_12.size());
-        System.out.println();
        }
 
         //HashSet --> Collection Object --> Has unique objects
@@ -49,7 +49,7 @@ public class Main {
             System.out.print(set_of_students.size());
         System.out.println();
         }
-        */
+
         HashMap<String,Student> studentMap = new HashMap<String,Student>();
         //inserting data
         studentMap.put(student1.getPerson().getName(),student1);

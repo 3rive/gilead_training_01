@@ -5,8 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0509ce99-160b-42f8-9a91-2f6b18903ce9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javatraining/src/com/gilead/training/file/read/FileReaderDemoBuffered.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javatraining/src/com/gilead/training/file/read/FileReaderDemoNio.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javatraining/src/com/gilead/training/file/read/TextBufferedFileReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javatraining/src/com/gilead/training/file/read/TextFileReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javatraining/src/com/gilead/training/file/read/sample" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collection_training/src/com/gilead/collections/training/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/collection_training/src/com/gilead/collections/training/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/collection_training/src/com/gilead/collections/stream/training/StreamMainTrigger.java" beforeDir="false" afterPath="$PROJECT_DIR$/collection_training/src/com/gilead/collections/stream/training/StreamMainTrigger.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,14 +38,41 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master"
   }
-}</component>
-  <component name="RunManager" selected="Application.StreamMainTrigger">
+}]]></component>
+  <component name="RunManager" selected="Application.FileReaderDemoBuffered">
+    <configuration name="FileReaderDemoBuffered" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.gilead.training.file.read.FileReaderDemoBuffered" />
+      <module name="javatraining" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.gilead.training.file.read.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileReaderDemoNio" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.gilead.training.file.read.FileReaderDemoNio" />
+      <module name="javatraining" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.gilead.training.file.read.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.gilead.collections.training.Main" />
       <module name="collection_training" />
@@ -67,6 +101,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.FileReaderDemoBuffered" />
+        <item itemvalue="Application.FileReaderDemoNio" />
         <item itemvalue="Application.StreamMainTrigger" />
         <item itemvalue="Application.Main" />
       </list>
@@ -90,6 +126,11 @@
           <url>file://$PROJECT_DIR$/collection_training/src/com/gilead/collections/training/Main.java</url>
           <line>52</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/javatraining/src/com/gilead/training/file/read/FileReaderDemoNio.java</url>
+          <line>9</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -1,0 +1,3 @@
+The java.nio.file.Files class in Java provides static methods that operate on 
+files, directories, or other types of files. The Files class was first introduced with Java SE 7, and several new utility methods were added to it with Java 8. The following methods are included with 
+Java 8 in the Files class, which are useful to read all content from a file.

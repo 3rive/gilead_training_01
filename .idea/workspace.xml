@@ -5,15 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0509ce99-160b-42f8-9a91-2f6b18903ce9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javatraining/src/com/gilead/training/file/read/FileReaderDemoBuffered.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javatraining/src/com/gilead/training/file/read/FileReaderDemoNio.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javatraining/src/com/gilead/training/file/read/TextBufferedFileReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javatraining/src/com/gilead/training/file/read/TextFileReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javatraining/src/com/gilead/training/file/read/sample" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_j_8_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javatraining/src/com/gilead/training/database/MySQLDatabaseConnectorDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/collection_training/src/com/gilead/collections/stream/training/StreamMainTrigger.java" beforeDir="false" afterPath="$PROJECT_DIR$/collection_training/src/com/gilead/collections/stream/training/StreamMainTrigger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javatraining/javatraining.iml" beforeDir="false" afterPath="$PROJECT_DIR$/javatraining/javatraining.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javatraining/src/com/gilead/training/file/read/FileBufferWrite.java" beforeDir="false" afterPath="$PROJECT_DIR$/javatraining/src/com/gilead/training/file/read/FileBufferWrite.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,9 +29,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$PROJECT_DIR$/../Downloads/jdk-20.0.2/lib/src.zip!/java.base/java/io/BufferedReader.java" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="8d3s48ha" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2V0N9zgCKLUTXM2Jt8tpoMfJBX3" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -43,10 +54,28 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master"
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/HP/Downloads/mysql-connector-j-8.1.0/mysql-connector-j-8.1.0/mysql-connector-j-8.1.0.jar",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "advanced.settings"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.FileReaderDemoBuffered">
+  <component name="RunManager" selected="Application.MySQLDatabaseConnectorDemo">
+    <configuration name="FileBufferWrite" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.gilead.training.file.read.FileBufferWrite" />
+      <module name="javatraining" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.gilead.training.file.read.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="FileReaderDemoBuffered" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.gilead.training.file.read.FileReaderDemoBuffered" />
       <module name="javatraining" />
@@ -73,12 +102,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.gilead.collections.training.Main" />
-      <module name="collection_training" />
+    <configuration name="MySQLDatabaseConnectorDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.gilead.training.database.MySQLDatabaseConnectorDemo" />
+      <module name="javatraining" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.gilead.collections.training.*" />
+          <option name="PATTERN" value="com.gilead.training.database.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -101,10 +130,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MySQLDatabaseConnectorDemo" />
+        <item itemvalue="Application.FileBufferWrite" />
         <item itemvalue="Application.FileReaderDemoBuffered" />
         <item itemvalue="Application.FileReaderDemoNio" />
         <item itemvalue="Application.StreamMainTrigger" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -134,5 +164,9 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

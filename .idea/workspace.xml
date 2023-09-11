@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0509ce99-160b-42f8-9a91-2f6b18903ce9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_j_8_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javatraining/src/com/gilead/training/database/MySQLDatabaseConnectorDemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javatraining/src/com/gilead/training/database/Actor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javatraining/javatraining.iml" beforeDir="false" afterPath="$PROJECT_DIR$/javatraining/javatraining.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javatraining/src/com/gilead/training/file/read/FileBufferWrite.java" beforeDir="false" afterPath="$PROJECT_DIR$/javatraining/src/com/gilead/training/file/read/FileBufferWrite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javatraining/src/com/gilead/training/database/MySQLDatabaseConnectorDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/javatraining/src/com/gilead/training/database/MySQLDatabaseConnectorDemo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

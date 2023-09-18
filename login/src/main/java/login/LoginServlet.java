@@ -19,12 +19,12 @@ public class LoginServlet implements Servlet {
 
     @Override
     public void service(ServletRequest request, ServletResponse response) throws ServletException, IOException {
-        System.out.println("Request Object - Username" +request.getParameter("username"));
-        System.out.println("Request Object - password" +request.getParameter("password"));
         response.setContentType("text/html");
         PrintWriter pw = response.getWriter();
-        if (request.getParameter("username").equalsIgnoreCase("admin")
-                && request.getParameter("password").equalsIgnoreCase("admin")) {
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        //validate the username and password using database
+        if (ValidateUser.validateUser(username, password)) {
             pw.println("<h2>You are authorized!!</h2>");
         } else {
             pw.println("<h2 style=\"color:Tomato;\">You are not authorized</h2>");

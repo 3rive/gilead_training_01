@@ -1,1 +1,3 @@
+login\User.class
 login\LoginServlet.class
+login\ValidateUser.class

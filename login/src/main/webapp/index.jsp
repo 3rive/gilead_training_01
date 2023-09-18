@@ -22,7 +22,7 @@
                     <div class="card shadow-lg mt-5">
                         <div class="card-header text-bg-primary">Login</div>
                         <div class="card-body">
-                            <form action="">
+                            <form action="validate">
                                 <div class="form-floating mb-3">
                                     <input type="text" class="form-control" id="username" placeholder="johndoe" autofocus>
                                     <label for="username"> Username </label>

@@ -24,11 +24,11 @@
                         <div class="card-body">
                             <form action="validate">
                                 <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="username" placeholder="johndoe" autofocus>
+                                    <input type="text" class="form-control" name= "username" id="username" placeholder="johndoe" autofocus>
                                     <label for="username"> Username </label>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <input type="password" class="form-control" id="password" placeholder="*****">
+                                    <input type="password" class="form-control" name= "password" id="password" placeholder="*****">
                                     <label for="username"> Password </label>
                                 </div>
                                 <div class="form-check mb-3">

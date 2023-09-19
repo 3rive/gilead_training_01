@@ -8,7 +8,7 @@ import java.io.PrintWriter;
 public class LoginServlet implements Servlet {
 
     @Override
-    public void init(ServletConfig servletConfig) throws ServletException {
+    public void init(ServletConfig servletConfig) {
         System.out.println("I am inside init method");
     }
 
@@ -23,9 +23,10 @@ public class LoginServlet implements Servlet {
         PrintWriter pw = response.getWriter();
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        //validate the username and password using database
         if (ValidateUser.validateUser(username, password)) {
-            pw.println("<h2>You are authorized!!</h2>");
+           // pw.println("<h2>Welcome " +username+ "!!</
+            RequestDispatcher rd = request.getRequestDispatcher("/dash.jsp");
+            rd.include(request,response);
         } else {
             pw.println("<h2 style=\"color:Tomato;\">You are not authorized</h2>");
         }

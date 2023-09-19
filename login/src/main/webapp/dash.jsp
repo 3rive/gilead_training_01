@@ -28,14 +28,14 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.min.js" integrity="sha384-5h4UG+6GOuV9qXh6HqOLwZMY4mnLPraeTrjT5v07o347pj6IkfuoASuGBhfDsp3d" crossorigin="anonymous"></script>
     -->
 
-    <title>Dash</title>
+    <title>DashBoard - Employees</title>
 </head>
 
 <body class="login">
     <!-- nav start -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="dash.jsp">Hi, User</a>
+            <a class="navbar-brand" href="dash.jsp">Hi, <%=request.getAttribute("username")%></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -43,14 +43,15 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="employees-list.jsp">Attendance</a>
+                        <a class="nav-link" aria-current="page" href="employees-list.jsp"><%=request.getAttribute("attendance")%></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="jobs-list.jsp">Leaves</a>
+                        <a class="nav-link" href="jobs-list.jsp"><%=request.getAttribute("leaves")%></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="jobs-list.jsp">My Profile</a>
+                        <a class="nav-link" href="jobs-list.jsp"><%=request.getAttribute("myprofile")%></a>
                     </li>
+
                 </ul>
                 <form class="d-flex">
                     <div class="input-group">

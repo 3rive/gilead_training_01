@@ -23,8 +23,25 @@ public class LoginServlet implements Servlet {
         PrintWriter pw = response.getWriter();
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        if (ValidateUser.validateUser(username, password)) {
-           // pw.println("<h2>Welcome " +username+ "!!</
+        User user = ValidateUser.validateUser(username, password);
+        if (user !=null && user.getRole().equalsIgnoreCase("HR")) {
+            if(user.getUsername().equalsIgnoreCase("admin"))
+            {
+                request.setAttribute("username",username.toUpperCase());
+            }
+            else{
+                request.setAttribute("username",username);
+            }
+            if(user.getRole().equalsIgnoreCase("HR")){
+                request.setAttribute("attendance","HR Attendance");
+                request.setAttribute("myprofile","Employee Profile");
+            }
+            else{
+                request.setAttribute("attendance","Attendance");
+                request.setAttribute("leaves","Leaves");
+                request.setAttribute("myprofile","My Profile");
+            }
+
             RequestDispatcher rd = request.getRequestDispatcher("/dash.jsp");
             rd.include(request,response);
         } else {

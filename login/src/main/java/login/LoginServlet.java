@@ -24,7 +24,7 @@ public class LoginServlet implements Servlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         User user = ValidateUser.validateUser(username, password);
-        if (user !=null && user.getRole().equalsIgnoreCase("HR")) {
+        if (user !=null) {
             if(user.getUsername().equalsIgnoreCase("admin"))
             {
                 request.setAttribute("username",username.toUpperCase());
@@ -34,9 +34,15 @@ public class LoginServlet implements Servlet {
             }
             if(user.getRole().equalsIgnoreCase("HR")){
                 request.setAttribute("attendance","HR Attendance");
+                request.setAttribute("leaves","Employee Leaves");
                 request.setAttribute("myprofile","Employee Profile");
             }
-            else{
+            else if(user.getRole().equalsIgnoreCase("EMP")){
+                request.setAttribute("attendance","My Attendance");
+                request.setAttribute("leaves","My Leaves");
+                request.setAttribute("myprofile","My Profile");
+            }
+            else {
                 request.setAttribute("attendance","Attendance");
                 request.setAttribute("leaves","Leaves");
                 request.setAttribute("myprofile","My Profile");

@@ -3,6 +3,16 @@ package login;
 public class User {
     private String username;
 
+    public int getUid() {
+        return uid;
+    }
+
+    public void setUid(int uid) {
+        this.uid = uid;
+    }
+
+    private int uid;
+
     public String getUsername() {
         return username;
     }

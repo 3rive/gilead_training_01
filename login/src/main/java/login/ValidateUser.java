@@ -9,7 +9,7 @@ public class ValidateUser {
         User userinDB = new User();
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/sakila", "root", "Letmein@123");
+             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ems", "root", "Letmein@123");
             if (connection != null) {
                 Statement statement;
                 statement = connection.createStatement();
@@ -18,9 +18,10 @@ public class ValidateUser {
                 if (resultSet != null) {
                     System.out.println("Database Connected and query executed!!!");
                     while (resultSet.next()) {
-                        userinDB.setUsername(resultSet.getString("username"));
-                        userinDB.setPassword(resultSet.getString("password"));
+                        userinDB.setUsername(resultSet.getString("uname"));
+                        userinDB.setPassword(resultSet.getString("pass"));
                         userinDB.setRole(resultSet.getString("role"));
+                        userinDB.setUid(resultSet.getInt("uid"));
                     }
                 }
                 if(userinDB.getUsername().equalsIgnoreCase(username)

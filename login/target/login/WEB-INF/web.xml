@@ -6,10 +6,18 @@
   <display-name>Archetype Created Web Application</display-name>
   <servlet>
     <servlet-name>LoginServlet</servlet-name>
-    <servlet-class>login.LoginServlet</servlet-class>
+    <servlet-class>com.gilead.controller.LoginServlet</servlet-class>
+  </servlet>
+  <servlet>
+  <servlet-name>InitServlet</servlet-name>
+    <servlet-class>com.gilead.controller.InitServlet</servlet-class>  
   </servlet>
   <servlet-mapping>
     <servlet-name>LoginServlet</servlet-name>
     <url-pattern>/validate</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+	<servlet-name>InitServlet</servlet-name>
+    <url-pattern>/init</url-pattern>  
   </servlet-mapping>
 </web-app>

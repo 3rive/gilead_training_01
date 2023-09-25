@@ -45,14 +45,9 @@
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="employees-list.jsp"><%=request.getAttribute("attendance")%></a>
                     </li>
-                    <% if(request.getAttribute("leaves"))!= null
-                    { %>
                     <li class="nav-item">
                         <a class="nav-link" href="jobs-list.jsp"><%=request.getAttribute("leaves")%></a>
                     </li>
-                    <%
-                    }
-                    %>
                     <li class="nav-item">
                         <a class="nav-link" href="jobs-list.jsp"><%=request.getAttribute("myprofile")%></a>
                     </li>

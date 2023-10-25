@@ -4,6 +4,7 @@
 package com.gilead.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import jakarta.servlet.Servlet;
 import jakarta.servlet.ServletConfig;
@@ -18,7 +19,7 @@ public class InitServlet implements Servlet {
 
 	@Override
 	public void init(ServletConfig config) throws ServletException {
-		System.out.print("Inside Init Servlet");
+		System.out.print("Inside Init Servlet ok");
 	}
 
 	@Override
@@ -29,8 +30,10 @@ public class InitServlet implements Servlet {
 
 	@Override
 	public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
-		System.out.print("Inside service method of init Servlet");
-
+		res.setContentType("text/html");
+        PrintWriter pw = res.getWriter();
+        pw.println("<h2 style=\"color:Tomato;\">From init Servlet</h2>");
+        System.out.println("Done from init servlet");
 	}
 
 	@Override

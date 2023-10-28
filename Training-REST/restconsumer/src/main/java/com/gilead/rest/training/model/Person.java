@@ -5,9 +5,60 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Person {
     private Name name;
+
+    public Dob getDob() {
+        return dob;
+    }
+
+    public void setDob(Dob dob) {
+        this.dob = dob;
+    }
+
+    private Dob dob;
     private Location location;
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
     private String email;
+
+    private String phone;
+
+    private Registered registered;
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
     private String gender;
+    private String city;
+
+    private ID id;
+
+    public Registered getRegistered() {
+        return registered;
+    }
+
+    public void setRegistered(Registered registered) {
+        this.registered = registered;
+    }
+
+    public ID getId() {
+        return id;
+    }
+
+    public void setId(ID id) {
+        this.id = id;
+    }
 
     public void setName(Name name) {
         this.name = name;

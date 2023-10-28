@@ -1,6 +1,11 @@
+com\gilead\rest\training\dao\PersonDao.class
+com\gilead\rest\training\model\Person.class
+com\gilead\rest\training\web\RestServlet.class
+com\gilead\rest\training\dto\PersonDTO.class
+com\gilead\rest\training\model\ID.class
 com\gilead\rest\training\model\Name.class
 com\gilead\rest\training\service\PersonService.class
+com\gilead\rest\training\model\Dob.class
+com\gilead\rest\training\model\Registered.class
 com\gilead\rest\training\model\PersonList.class
-com\gilead\rest\training\model\Person.class
 com\gilead\rest\training\model\Location.class
-com\gilead\rest\training\web\RestServlet.class

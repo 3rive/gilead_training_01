@@ -1,6 +1,6 @@
 package com.gilead.rest.training.web;
 
-import com.gilead.rest.training.model.Person;
+import com.gilead.rest.training.dto.PersonDTO;
 import com.gilead.rest.training.service.PersonService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.ServletResponse;
@@ -10,6 +10,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+import java.text.ParseException;
 import java.util.List;
 @WebServlet( urlPatterns = "/api")
 public class RestServlet extends HttpServlet {
@@ -62,9 +63,12 @@ public class RestServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-
-        List<Person> people = PersonService.fetchPeople(0, 1);
-
+        try {
+            PersonService.loadPeople(1, 50);
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
+        List<PersonDTO> people = PersonService.getPeople();
         request.setAttribute("people", people);
         request.getRequestDispatcher("show.jsp").forward(request, response);
     }

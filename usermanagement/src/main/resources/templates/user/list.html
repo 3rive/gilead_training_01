@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>List all users in database</title>
+<link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+</link>
+</head>
+<body>
+	<div>
+		<table>
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>User Name</th>
+					<th>Password</th>
+					<th>Age</th>
+					<th>Edit</th>
+					<th>Delete</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="user : ${users}">
+					<th scope="row" th:text="${user.id}">1</th>
+					<td th:text="${user.username}">Raja</td>
+					<td th:text="${user.password}">letmein</td>
+					<td th:text="${user.age}">38</td>
+					<!--<td <a th:href="">Edit</a>
+					<td <a th:href="">Delete</a>-->
+				</tr>
+			</tbody>		
+		</table>
+</div>
+<div>
+	<div>
+		<a href="/toAdd" th:href="@{/toAdd}">Add</a>
+	</div>
+</div>
+
+</body>
+</html>

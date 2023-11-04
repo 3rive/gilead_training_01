@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<link>
+<meta charset="UTF-8">
+<title>Add User</title>
+<link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+</link>
+</head>
+
+<body class="container">
+	<div class="80%">
+		<form class="form-horizontal" th:action="@{/add}" method="post">
+			<div class="form-group">
+				<label for="username" class="col-sm-2-control-label">UserName</label>
+				<div>
+					<input type="text" class="form-control" name="username" id="username" placeholder="username" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="password" class="col-sm-2-control-label">Password</label>
+				<div>
+					<input type="text" class="form-control" name="password" id="password" placeholder="password" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="age" class="col-sm-2-control-label">Age</label>
+				<div>
+					<input type="text" class="form-control" name="age" id="age" placeholder="age" />
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<input type="submit" value="Submit" class="btn btn-info" />
+					<input type="reset" value="Reset" class="btn btn-info" />
+				</div>
+			</div>
+
+		</form>
+
+	</div>
+
+</body>
+
+</html>

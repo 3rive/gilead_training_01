@@ -12,7 +12,8 @@ export function Layout() {
 
   return (
     <div className="shell">
-      <header className="top">
+      <header className="topbar">
+      <div className="top">
         <NavLink to="/" className="mark" onClick={() => setOpen(false)}>
           <span className="mark-seal" aria-hidden="true" />
           Homeward
@@ -30,6 +31,7 @@ export function Layout() {
             Start a request
           </NavLink>
         </nav>
+      </div>
       </header>
       <main>
         <Outlet />

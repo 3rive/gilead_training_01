@@ -17,6 +17,6 @@ The scope does not finish until those threads have stopped.
 
 Slide 1 is the idea. Slide 2 is the decline, message by message.
 
-Code: https://github.com/3rive/gilead_training_01/tree/aigen/java27-structured-concurrency-be6a/java27-checkout
+Code: https://github.com/3rive/gilead_training_01/tree/main/java27-checkout
 
 #Java #Java27 #Backend

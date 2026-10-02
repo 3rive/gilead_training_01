@@ -30,19 +30,32 @@ export function HomePage() {
             <li>POA so you do not fly for registration</li>
           </ul>
         </div>
-        {sample && (
-          <Link className="file-card" to={`/track/${sample.reference}`}>
-            <p className="kicker">Sample file</p>
-            <strong>{sample.reference}</strong>
-            <p>
-              {sample.fullName} · {sample.cityAbroad}
-            </p>
-            <p>
-              {loanName(sample.loanType)} · {inr(sample.amountInr)} · {sample.cityInIndia}
-            </p>
-            <span className={`pill pill-${sample.status}`}>{statusLabel(sample.status)}</span>
-          </Link>
-        )}
+        <div className="hero-stage">
+          <div className="route" aria-hidden="true">
+            <span>Dubai</span>
+            <i />
+            <span>Hyderabad</span>
+          </div>
+          {sample && (
+            <Link className="file-card" to={`/track/${sample.reference}`}>
+              <p className="kicker">Sample file on the desk</p>
+              <strong>{sample.reference}</strong>
+              <p>
+                {sample.fullName} · {sample.cityAbroad}
+              </p>
+              <p>
+                {loanName(sample.loanType)} · {inr(sample.amountInr)} · {sample.cityInIndia}
+              </p>
+              <span className={`pill pill-${sample.status}`}>{statusLabel(sample.status)}</span>
+            </Link>
+          )}
+        </div>
+      </section>
+      <section className="stats">
+        <div><strong>8</strong><span>lenders in the mock book</span></div>
+        <div><strong>9</strong><span>countries of residence</span></div>
+        <div><strong>24h</strong><span>advisor callback in the story</span></div>
+        <div><strong>1</strong><span>file, not eight bank portals</span></div>
       </section>
 
       <section className="band">

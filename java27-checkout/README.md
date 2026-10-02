@@ -23,3 +23,7 @@ mvn -q exec:exec
 ```
 
 The demo prints a successful quote, then a fraud decline where the warehouse call was cancelled instead of running for its full two seconds.
+
+## LinkedIn
+
+`linkedin/poster.png` is the concept card. `linkedin/sequence.png` is the decline path. The caption is in `linkedin/POST.md`.

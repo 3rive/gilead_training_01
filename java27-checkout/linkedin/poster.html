@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Structured concurrency poster</title>
+<style>
+  :root {
+    --ink: #1a1714;
+    --muted: #5c564c;
+    --paper: #f3efe6;
+    --card: #fffdf8;
+    --line: #d9d1c3;
+    --green: #1d6b45;
+    --red: #c23b2e;
+    --gold: #a15c12;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    width: 1080px;
+    height: 1350px;
+    overflow: hidden;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Inter, "Liberation Sans", sans-serif;
+  }
+  .sheet {
+    width: 1080px;
+    height: 1350px;
+    padding: 64px 68px 48px;
+    position: relative;
+  }
+  .kicker {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 18px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  h1 {
+    margin: 28px 0 0;
+    font-size: 78px;
+    line-height: 0.92;
+    font-weight: 650;
+    letter-spacing: -0.035em;
+  }
+  .lede {
+    margin: 28px 0 0;
+    max-width: 820px;
+    font-size: 28px;
+    line-height: 1.35;
+    color: var(--muted);
+  }
+  .stage {
+    margin-top: 42px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 28px;
+    padding: 36px 36px 28px;
+  }
+  .checkout {
+    width: 280px;
+    margin: 0 auto 8px;
+    text-align: center;
+    background: var(--ink);
+    color: #f6f1e7;
+    border-radius: 16px;
+    padding: 16px 12px 14px;
+  }
+  .checkout strong { display: block; font-size: 22px; }
+  .checkout span { font-family: "JetBrains Mono", monospace; font-size: 14px; color: #c8bfb0; }
+  .stem {
+    width: 2px;
+    height: 28px;
+    background: var(--ink);
+    margin: 0 auto;
+  }
+  .scope {
+    border: 2px solid var(--ink);
+    border-radius: 22px;
+    padding: 22px 22px 26px;
+  }
+  .scope-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 18px;
+  }
+  .scope-label strong { font-size: 22px; }
+  .scope-label span {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 15px;
+    color: var(--gold);
+  }
+  .lanes {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+  }
+  .lane {
+    border-radius: 16px;
+    padding: 18px 16px 16px;
+    min-height: 210px;
+  }
+  .lane h2 { margin: 0; font-size: 22px; }
+  .lane p { margin: 8px 0 0; font-size: 16px; line-height: 1.35; color: var(--muted); }
+  .lane .state {
+    margin-top: 22px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 15px;
+    font-weight: 650;
+  }
+  .ok { background: #e7f4ec; }
+  .ok .state { color: var(--green); }
+  .bad { background: #fdeceb; }
+  .bad .state { color: var(--red); }
+  .rules {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 18px;
+    margin-top: 28px;
+  }
+  .rule {
+    border-top: 2px solid var(--ink);
+    padding-top: 14px;
+  }
+  .rule b {
+    display: block;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+  .rule p { margin: 0; font-size: 20px; line-height: 1.3; }
+  footer {
+    position: absolute;
+    left: 68px;
+    right: 68px;
+    bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 16px;
+    color: var(--muted);
+  }
+</style>
+</head>
+<body>
+  <div class="sheet">
+    <div class="kicker">
+      <span>Java 27 · JEP 533 · preview</span>
+      <span>StructuredTaskScope</span>
+    </div>
+    <h1>One checkout.<br>Three calls.<br>One scope.</h1>
+    <p class="lede">A payable total needs the warehouse, pricing, and fraud screening. They run together. If one fails, the others are cancelled.</p>
+    <div class="stage">
+      <div class="checkout">
+        <strong>Checkout</strong>
+        <span>ord-42 · BOOK-1 · qty 2</span>
+      </div>
+      <div class="stem"></div>
+      <div class="scope">
+        <div class="scope-label">
+          <strong>StructuredTaskScope</strong>
+          <span>deadline 800ms</span>
+        </div>
+        <div class="lanes">
+          <div class="lane ok">
+            <h2>Warehouse</h2>
+            <p>Hold 2 × BOOK-1 at wh-12.</p>
+            <div class="state">cancelled if unused</div>
+          </div>
+          <div class="lane ok">
+            <h2>Pricing</h2>
+            <p>Tax and promotion for IE. Total €25.00.</p>
+            <div class="state">cancelled if unused</div>
+          </div>
+          <div class="lane bad">
+            <h2>Fraud</h2>
+            <p>Screen tok_visa for this order.</p>
+            <div class="state">declined → cancel all</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="rules">
+      <div class="rule">
+        <b>01</b>
+        <p>Fork the related calls inside one scope.</p>
+      </div>
+      <div class="rule">
+        <b>02</b>
+        <p>join() returns only when every call succeeds.</p>
+      </div>
+      <div class="rule">
+        <b>03</b>
+        <p>One failure or a timeout cancels the rest.</p>
+      </div>
+    </div>
+    <footer>
+      <span>github.com/3rive/gilead_training_01</span>
+      <span>java27-checkout</span>
+    </footer>
+  </div>
+</body>
+</html>

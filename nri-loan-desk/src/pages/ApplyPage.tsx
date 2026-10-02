@@ -4,6 +4,7 @@ import { countries, countryByName, loanTypes } from "../data/catalog";
 import { inr, toInr } from "../lib/money";
 import { createApplication, upsertApplication } from "../lib/store";
 import type { Draft, LoanTypeId } from "../types";
+import { btn, btnGhost, field, h1, kicker, label, lede, page } from "../ui";
 
 const steps = ["Where you live", "The loan", "Income", "India side", "You"];
 
@@ -93,23 +94,26 @@ export function ApplyPage() {
   }
 
   return (
-    <section className="page apply">
+    <section className={`${page} grid items-start gap-8 lg:grid-cols-[0.85fr_1fr]`}>
       <div>
-        <p className="kicker">New request</p>
-        <h1>Raise a loan file from where you live.</h1>
-        <p className="lede narrow">No documents on this step. The reference you get at the end is how you track the file.</p>
-        <ol className="progress">
-          {steps.map((label, index) => (
-            <li key={label} className={index === step ? "current" : index < step ? "done" : ""}>
-              {label}
+        <p className={kicker}>New request</p>
+        <h1 className={h1}>Raise a loan file from where you live.</h1>
+        <p className={lede}>No documents on this step. The reference you get at the end is how you track the file.</p>
+        <ol className="mt-6 flex flex-wrap gap-2">
+          {steps.map((name, index) => (
+            <li
+              key={name}
+              className={`border-b-2 px-1 pb-1 text-sm ${index === step ? "border-emerald-700 font-semibold text-emerald-950" : index < step ? "border-emerald-400 text-emerald-700" : "border-emerald-100 text-emerald-800/60"}`}
+            >
+              {name}
             </li>
           ))}
         </ol>
       </div>
 
-      <form className="form" onSubmit={step === 4 ? onSubmit : onContinue}>
+      <form className="grid gap-4 rounded-2xl border border-emerald-100 bg-white p-6 shadow-sm" onSubmit={step === 4 ? onSubmit : onContinue}>
         {errors.length > 0 && (
-          <div className="errors" role="alert">
+          <div className="rounded-xl bg-red-50 px-3 py-2 text-sm text-red-800" role="alert">
             {errors.map((error) => (
               <p key={error}>{error}</p>
             ))}
@@ -118,9 +122,9 @@ export function ApplyPage() {
 
         {step === 0 && (
           <>
-            <label>
+            <label className={label}>
               Country of residence
-              <select
+              <select className={field}
                 value={draft.country}
                 onChange={(event) => {
                   const next = countryByName(event.target.value);
@@ -132,21 +136,21 @@ export function ApplyPage() {
                 ))}
               </select>
             </label>
-            <label>
+            <label className={label}>
               City
-              <input value={draft.cityAbroad} onChange={(event) => patch({ cityAbroad: event.target.value })} />
+              <input className={field} value={draft.cityAbroad} onChange={(event) => patch({ cityAbroad: event.target.value })} />
             </label>
-            <label>
+            <label className={label}>
               Years abroad
-              <input
+              <input className={field}
                 inputMode="decimal"
                 value={draft.yearsAbroad}
                 onChange={(event) => patch({ yearsAbroad: event.target.value })}
               />
             </label>
-            <label>
+            <label className={label}>
               Residency
-              <select value={draft.residency} onChange={(event) => patch({ residency: event.target.value })}>
+              <select className={field} value={draft.residency} onChange={(event) => patch({ residency: event.target.value })}>
                 {["Employment visa", "Permanent residence", "Citizen (OCI / PIO)", "Student visa", "Dependent visa"].map((item) => (
                   <option key={item}>{item}</option>
                 ))}
@@ -157,9 +161,9 @@ export function ApplyPage() {
 
         {step === 1 && (
           <>
-            <label>
+            <label className={label}>
               Loan
-              <select value={draft.loanType} onChange={(event) => patch({ loanType: event.target.value as LoanTypeId })}>
+              <select className={field} value={draft.loanType} onChange={(event) => patch({ loanType: event.target.value as LoanTypeId })}>
                 {loanTypes.map((loan) => (
                   <option key={loan.id} value={loan.id}>
                     {loan.name}
@@ -167,44 +171,44 @@ export function ApplyPage() {
                 ))}
               </select>
             </label>
-            <label>
+            <label className={label}>
               Amount in rupees
-              <input inputMode="numeric" value={draft.amountInr} onChange={(event) => patch({ amountInr: event.target.value })} />
+              <input className={field} inputMode="numeric" value={draft.amountInr} onChange={(event) => patch({ amountInr: event.target.value })} />
             </label>
-            <label>
+            <label className={label}>
               Tenure in years
-              <input inputMode="numeric" value={draft.tenureYears} onChange={(event) => patch({ tenureYears: event.target.value })} />
+              <input className={field} inputMode="numeric" value={draft.tenureYears} onChange={(event) => patch({ tenureYears: event.target.value })} />
             </label>
-            <label>
+            <label className={label}>
               City in India
-              <input value={draft.cityInIndia} onChange={(event) => patch({ cityInIndia: event.target.value })} />
+              <input className={field} value={draft.cityInIndia} onChange={(event) => patch({ cityInIndia: event.target.value })} />
             </label>
-            <label>
+            <label className={label}>
               What is this for?
-              <textarea value={draft.purpose} onChange={(event) => patch({ purpose: event.target.value })} rows={4} />
+              <textarea className={field} value={draft.purpose} onChange={(event) => patch({ purpose: event.target.value })} rows={4} />
             </label>
           </>
         )}
 
         {step === 2 && (
           <>
-            <label>
+            <label className={label}>
               Work
-              <select value={draft.employment} onChange={(event) => patch({ employment: event.target.value })}>
+              <select className={field} value={draft.employment} onChange={(event) => patch({ employment: event.target.value })}>
                 {["Salaried", "Self-employed", "Professional practice", "Business owner"].map((item) => (
                   <option key={item}>{item}</option>
                 ))}
               </select>
             </label>
-            <label>
+            <label className={label}>
               Employer or practice
-              <input value={draft.employer} onChange={(event) => patch({ employer: event.target.value })} />
+              <input className={field} value={draft.employer} onChange={(event) => patch({ employer: event.target.value })} />
             </label>
-            <label>
+            <label className={label}>
               Annual income ({draft.incomeCurrency})
-              <input inputMode="decimal" value={draft.annualIncome} onChange={(event) => patch({ annualIncome: event.target.value })} />
+              <input className={field} inputMode="decimal" value={draft.annualIncome} onChange={(event) => patch({ annualIncome: event.target.value })} />
             </label>
-            <p className="aside">
+            <p className="text-sm text-emerald-800/80">
               {incomeInr > 0
                 ? `About ${inr(incomeInr)} a year at the demo rate of 1 ${draft.incomeCurrency} = ₹${country.perInr}. Lenders still read the foreign-currency statements.`
                 : "We convert this only so the desk can sketch eligibility. The lender reads the original currency."}
@@ -214,38 +218,38 @@ export function ApplyPage() {
 
         {step === 3 && (
           <>
-            <fieldset>
-              <legend>Resident co-applicant in India?</legend>
-              <label className="check">
-                <input type="radio" name="co" checked={draft.coApplicant === "yes"} onChange={() => patch({ coApplicant: "yes" })} />
+            <fieldset className="rounded-xl border border-emerald-200 p-3">
+              <legend className="px-1 text-sm font-medium">Resident co-applicant in India?</legend>
+              <label className="flex items-center gap-2 py-1 text-sm">
+                <input className="accent-emerald-700" type="radio" name="co" checked={draft.coApplicant === "yes"} onChange={() => patch({ coApplicant: "yes" })} />
                 Yes, a close relative
               </label>
-              <label className="check">
-                <input type="radio" name="co" checked={draft.coApplicant === "no"} onChange={() => patch({ coApplicant: "no" })} />
+              <label className="flex items-center gap-2 py-1 text-sm">
+                <input className="accent-emerald-700" type="radio" name="co" checked={draft.coApplicant === "no"} onChange={() => patch({ coApplicant: "no" })} />
                 No
               </label>
             </fieldset>
             {draft.coApplicant === "yes" && (
-              <label>
+              <label className={label}>
                 Relationship
-                <input
+                <input className={field}
                   value={draft.coApplicantRelation}
                   onChange={(event) => patch({ coApplicantRelation: event.target.value })}
                   placeholder="Spouse, parent, sibling"
                 />
               </label>
             )}
-            <label>
+            <label className={label}>
               NRE or NRO account
-              <select value={draft.hasNreNro} onChange={(event) => patch({ hasNreNro: event.target.value as Draft["hasNreNro"] })}>
+              <select className={field} value={draft.hasNreNro} onChange={(event) => patch({ hasNreNro: event.target.value as Draft["hasNreNro"] })}>
                 <option value="yes">Already open</option>
                 <option value="opening">Need to open one</option>
                 <option value="no">Not yet, and I am unsure</option>
               </select>
             </label>
-            <label>
+            <label className={label}>
               Power of attorney for the India visit
-              <select value={draft.needsPoa} onChange={(event) => patch({ needsPoa: event.target.value as Draft["needsPoa"] })}>
+              <select className={field} value={draft.needsPoa} onChange={(event) => patch({ needsPoa: event.target.value as Draft["needsPoa"] })}>
                 <option value="yes">Yes, someone there should sign</option>
                 <option value="no">I can travel for registration</option>
               </select>
@@ -255,19 +259,19 @@ export function ApplyPage() {
 
         {step === 4 && (
           <>
-            <label>
+            <label className={label}>
               Full name
-              <input value={draft.fullName} onChange={(event) => patch({ fullName: event.target.value })} />
+              <input className={field} value={draft.fullName} onChange={(event) => patch({ fullName: event.target.value })} />
             </label>
-            <label>
+            <label className={label}>
               Email
-              <input type="email" value={draft.email} onChange={(event) => patch({ email: event.target.value })} />
+              <input className={field} type="email" value={draft.email} onChange={(event) => patch({ email: event.target.value })} />
             </label>
-            <label>
+            <label className={label}>
               Phone with country code
-              <input value={draft.phone} onChange={(event) => patch({ phone: event.target.value })} />
+              <input className={field} value={draft.phone} onChange={(event) => patch({ phone: event.target.value })} />
             </label>
-            <div className="summary">
+            <div className="rounded-xl bg-emerald-50 p-3 text-sm">
               <p>
                 {draft.fullName || "You"} · {draft.cityAbroad}, {draft.country}
               </p>
@@ -279,17 +283,17 @@ export function ApplyPage() {
           </>
         )}
 
-        <div className="form-actions">
+        <div className="flex justify-between gap-3">
           {step > 0 ? (
-            <button type="button" className="button ghost" onClick={() => { setErrors([]); setStep((current) => current - 1); }}>
+            <button type="button" className={btnGhost} onClick={() => { setErrors([]); setStep((current) => current - 1); }}>
               Back
             </button>
           ) : (
-            <Link className="button ghost" to="/loans">
+            <Link className={btnGhost} to="/loans">
               All loans
             </Link>
           )}
-          <button className="button" type="submit">
+          <button className={btn} type="submit">
             {step === 4 ? "Submit request" : "Continue"}
           </button>
         </div>

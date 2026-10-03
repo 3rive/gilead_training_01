@@ -1,0 +1,13 @@
+server:
+  port: 8080
+
+app:
+  security:
+    # Must be the issuer the API and the token both see. Keycloak prints this
+    # as "iss" inside access tokens.
+    issuer-uri: ${KEYCLOAK_ISSUER_URI:http://localhost:8180/realms/gilead}
+    client-id: ${KEYCLOAK_CLIENT_ID:gilead-api}
+    audience: ${KEYCLOAK_AUDIENCE:gilead-api}
+    allowed-origins:
+      - http://localhost:4200
+      - http://localhost:5173

@@ -1,0 +1,62 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (stockLot(); as stockLotRef) {
+      <div>
+        <h2 data-cy="stockLotDetailsHeading"><span>Stock Lot</span></h2>
+
+        <hr />
+
+        <mi-alert-error />
+
+        <mi-alert />
+
+        <dl class="row-md jh-entity-details">
+          <dt><span>ID</span></dt>
+          <dd>
+            <span>{{ stockLotRef.id }}</span>
+          </dd>
+          <dt><span>Batch Number</span></dt>
+          <dd>
+            <span>{{ stockLotRef.batchNumber }}</span>
+          </dd>
+          <dt><span>Expiry Date</span></dt>
+          <dd>
+            <span>{{ stockLotRef.expiryDate | formatMediumDate }}</span>
+          </dd>
+          <dt><span>Quantity On Hand</span></dt>
+          <dd>
+            <span>{{ stockLotRef.quantityOnHand }}</span>
+          </dd>
+          <dt><span>Received Date</span></dt>
+          <dd>
+            <span>{{ stockLotRef.receivedDate | formatMediumDate }}</span>
+          </dd>
+          <dt><span>Medicine</span></dt>
+          <dd>
+            @if (stockLot()!.medicine) {
+              <div>
+                <a [routerLink]="['/medicine', stockLot()!.medicine?.id, 'view']">{{ stockLotRef.medicine?.name }}</a>
+              </div>
+            }
+          </dd>
+          <dt><span>Storage Location</span></dt>
+          <dd>
+            @if (stockLot()!.storageLocation) {
+              <div>
+                <a [routerLink]="['/storage-location', stockLot()!.storageLocation?.id, 'view']">{{ stockLotRef.storageLocation?.name }}</a>
+              </div>
+            }
+          </dd>
+        </dl>
+
+        <button type="button" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left" />&nbsp;<span>Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/stock-lot', stockLotRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt" />&nbsp;<span>Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

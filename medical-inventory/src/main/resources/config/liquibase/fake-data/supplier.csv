@@ -1,0 +1,5 @@
+id;name;contact_name;email;phone;active
+1;Apex Pharma;Priya Shah;priya.shah@apexpharma.example;415-555-0142;true
+2;Northwind Labs;Owen Blake;owen.blake@northwindlabs.example;312-555-0198;true
+3;Harbor Generics;Mina Ortiz;mina.ortiz@harborgenerics.example;206-555-0174;true
+4;Summit Biologics;Helen Cho;helen.cho@summitbio.example;617-555-0116;false

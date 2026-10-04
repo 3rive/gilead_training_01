@@ -1,0 +1,68 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (stockMovement(); as stockMovementRef) {
+      <div>
+        <h2 data-cy="stockMovementDetailsHeading"><span>Stock Movement</span></h2>
+
+        <hr />
+
+        <mi-alert-error />
+
+        <mi-alert />
+
+        <dl class="row-md jh-entity-details">
+          <dt><span>ID</span></dt>
+          <dd>
+            <span>{{ stockMovementRef.id }}</span>
+          </dd>
+          <dt><span>Movement Type</span></dt>
+          <dd>
+            <span>{{
+              {
+                null: '',
+                RECEIPT: 'RECEIPT',
+                DISPENSE: 'DISPENSE',
+                ADJUSTMENT: 'ADJUSTMENT',
+                RETURN: 'RETURN',
+                EXPIRED: 'EXPIRED',
+                TRANSFER: 'TRANSFER',
+              }[stockMovementRef.movementType ?? 'null']
+            }}</span>
+          </dd>
+          <dt><span>Quantity</span></dt>
+          <dd>
+            <span>{{ stockMovementRef.quantity }}</span>
+          </dd>
+          <dt><span>Occurred At</span></dt>
+          <dd>
+            <span>{{ stockMovementRef.occurredAt | formatMediumDatetime }}</span>
+          </dd>
+          <dt><span>Reason</span></dt>
+          <dd>
+            <span>{{ stockMovementRef.reason }}</span>
+          </dd>
+          <dt><span>Reference Number</span></dt>
+          <dd>
+            <span>{{ stockMovementRef.referenceNumber }}</span>
+          </dd>
+          <dt><span>Stock Lot</span></dt>
+          <dd>
+            @if (stockMovement()!.stockLot) {
+              <div>
+                <a [routerLink]="['/stock-lot', stockMovement()!.stockLot?.id, 'view']">{{ stockMovementRef.stockLot?.batchNumber }}</a>
+              </div>
+            }
+          </dd>
+        </dl>
+
+        <button type="button" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left" />&nbsp;<span>Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/stock-movement', stockMovementRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt" />&nbsp;<span>Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

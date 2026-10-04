@@ -1,0 +1,44 @@
+<div>
+  <h2>
+    <span id="metrics-page-heading" data-cy="metricsPageHeading">Application Metrics</span>
+
+    <button class="btn btn-primary float-end" (click)="refresh()"><fa-icon icon="sync" /> <span>Refresh</span></button>
+  </h2>
+
+  <h3>JVM Metrics</h3>
+
+  @let metricsRef = metrics();
+  @if (metricsRef && !updatingMetrics()) {
+    <div class="row">
+      <mi-jvm-memory class="col-md-4" [updating]="updatingMetrics()" [jvmMemoryMetrics]="metricsRef.jvm" />
+
+      <mi-jvm-threads class="col-md-4" [threads]="threads()" />
+
+      <mi-metrics-system class="col-md-4" [updating]="updatingMetrics()" [systemMetrics]="metricsRef.processMetrics" />
+    </div>
+  }
+
+  @if (metricsRef?.garbageCollector; as metricsRefGarbageCollector) {
+    <mi-metrics-garbagecollector [updating]="updatingMetrics()" [garbageCollectorMetrics]="metricsRefGarbageCollector" />
+  }
+
+  @if (updatingMetrics()) {
+    <div class="alert alert-info">Updating...</div>
+  }
+
+  @if (metricsRef?.['http.server.requests']; as metricsRefHttpServerRequests) {
+    <mi-metrics-request [updating]="updatingMetrics()" [requestMetrics]="metricsRefHttpServerRequests" />
+  }
+
+  @if (metricsRef?.services; as metricsRefServices) {
+    <mi-metrics-endpoints-requests [updating]="updatingMetrics()" [endpointsRequestsMetrics]="metricsRefServices" />
+  }
+
+  @if (metricsRef?.cache; as metricsRefCache) {
+    <mi-metrics-cache [updating]="updatingMetrics()" [cacheMetrics]="metricsRefCache" />
+  }
+
+  @if (metricsRef && metricsKeyExistsAndObjectNotEmpty('databases')) {
+    <mi-metrics-datasource [updating]="updatingMetrics()" [datasourceMetrics]="metricsRef.databases" />
+  }
+</div>

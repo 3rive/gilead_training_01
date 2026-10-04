@@ -1,0 +1,163 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="mi-stock-movement-heading" data-cy="StockMovementCreateUpdateHeading">Create or edit a Stock Movement</h2>
+
+      <div>
+        <mi-alert-error />
+
+        @if (editForm.controls.id.value !== null) {
+          <div class="mb-3">
+            <label class="form-label" for="field_id">ID</label>
+            <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+          </div>
+        }
+
+        @let movementTypeRef = editForm.get('movementType')!;
+        <div class="mb-3">
+          <label class="form-label" for="field_movementType">Movement Type</label>
+          <select class="form-select" name="movementType" formControlName="movementType" id="field_movementType" data-cy="movementType">
+            <option [ngValue]="null"></option>
+            @for (movementType of movementTypeValues; track $index) {
+              <option [value]="movementType">
+                {{
+                  {
+                    null: '',
+                    RECEIPT: 'RECEIPT',
+                    DISPENSE: 'DISPENSE',
+                    ADJUSTMENT: 'ADJUSTMENT',
+                    RETURN: 'RETURN',
+                    EXPIRED: 'EXPIRED',
+                    TRANSFER: 'TRANSFER',
+                  }[movementType]
+                }}
+              </option>
+            }
+          </select>
+          @if (movementTypeRef.invalid && (movementTypeRef.dirty || movementTypeRef.touched)) {
+            <div>
+              @if (movementTypeRef.errors?.required) {
+                <small class="form-text text-danger">This field is required.</small>
+              }
+            </div>
+          }
+        </div>
+
+        @let quantityRef = editForm.get('quantity')!;
+        <div class="mb-3">
+          <label class="form-label" for="field_quantity">Quantity</label>
+          <input type="number" class="form-control" name="quantity" id="field_quantity" data-cy="quantity" formControlName="quantity" />
+          @if (quantityRef.invalid && (quantityRef.dirty || quantityRef.touched)) {
+            <div>
+              @if (quantityRef.errors?.required) {
+                <small class="form-text text-danger">This field is required.</small>
+              }
+              <small class="form-text text-danger" [hidden]="!quantityRef.errors?.number">This field should be a number.</small>
+            </div>
+          }
+        </div>
+
+        @let occurredAtRef = editForm.get('occurredAt')!;
+        <div class="mb-3">
+          <label class="form-label" for="field_occurredAt">Occurred At</label>
+          <div class="d-flex">
+            <input
+              id="field_occurredAt"
+              data-cy="occurredAt"
+              type="datetime-local"
+              class="form-control"
+              name="occurredAt"
+              formControlName="occurredAt"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+          @if (occurredAtRef.invalid && (occurredAtRef.dirty || occurredAtRef.touched)) {
+            <div>
+              @if (occurredAtRef.errors?.required) {
+                <small class="form-text text-danger">This field is required.</small>
+              }
+              <small class="form-text text-danger" [hidden]="!occurredAtRef.errors?.datetimelocal"
+                >This field should be a date and time.</small
+              >
+            </div>
+          }
+        </div>
+
+        @let reasonRef = editForm.get('reason')!;
+        <div class="mb-3">
+          <label class="form-label" for="field_reason">Reason</label>
+          <input type="text" class="form-control" name="reason" id="field_reason" data-cy="reason" formControlName="reason" />
+          @if (reasonRef.invalid && (reasonRef.dirty || reasonRef.touched)) {
+            <div>
+              @if (reasonRef.errors?.maxlength) {
+                <small class="form-text text-danger">This field cannot be longer than 255 characters.</small>
+              }
+            </div>
+          }
+        </div>
+
+        @let referenceNumberRef = editForm.get('referenceNumber')!;
+        <div class="mb-3">
+          <label class="form-label" for="field_referenceNumber">Reference Number</label>
+          <input
+            type="text"
+            class="form-control"
+            name="referenceNumber"
+            id="field_referenceNumber"
+            data-cy="referenceNumber"
+            formControlName="referenceNumber"
+          />
+          @if (referenceNumberRef.invalid && (referenceNumberRef.dirty || referenceNumberRef.touched)) {
+            <div>
+              @if (referenceNumberRef.errors?.maxlength) {
+                <small class="form-text text-danger">This field cannot be longer than 40 characters.</small>
+              }
+            </div>
+          }
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_stockLot">Stock Lot</label>
+          <select
+            class="form-select"
+            id="field_stockLot"
+            data-cy="stockLot"
+            name="stockLot"
+            formControlName="stockLot"
+            [compareWith]="compareStockLot"
+          >
+            @if (!editForm.get('stockLot')!.value) {
+              <option [ngValue]="null" selected></option>
+            }
+            @for (stockLotOption of stockLotsSharedCollection(); track $index) {
+              <option [ngValue]="stockLotOption">{{ stockLotOption.batchNumber }}</option>
+            }
+          </select>
+        </div>
+        @if (editForm.get(['stockLot'])!.invalid && (editForm.get(['stockLot'])!.dirty || editForm.get(['stockLot'])!.touched)) {
+          <div>
+            @if (editForm.get(['stockLot'])?.errors?.required) {
+              <small class="form-text text-danger">This field is required.</small>
+            }
+          </div>
+        }
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban" />&nbsp;<span>Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving()"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save" />&nbsp;<span>Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

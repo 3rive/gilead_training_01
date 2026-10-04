@@ -1,0 +1,13 @@
+export enum MovementType {
+  RECEIPT = 'RECEIPT',
+
+  DISPENSE = 'DISPENSE',
+
+  ADJUSTMENT = 'ADJUSTMENT',
+
+  RETURN = 'RETURN',
+
+  EXPIRED = 'EXPIRED',
+
+  TRANSFER = 'TRANSFER',
+}

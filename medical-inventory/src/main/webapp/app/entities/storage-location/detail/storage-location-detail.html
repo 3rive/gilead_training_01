@@ -1,0 +1,46 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (storageLocation(); as storageLocationRef) {
+      <div>
+        <h2 data-cy="storageLocationDetailsHeading"><span>Storage Location</span></h2>
+
+        <hr />
+
+        <mi-alert-error />
+
+        <mi-alert />
+
+        <dl class="row-md jh-entity-details">
+          <dt><span>ID</span></dt>
+          <dd>
+            <span>{{ storageLocationRef.id }}</span>
+          </dd>
+          <dt><span>Code</span></dt>
+          <dd>
+            <span>{{ storageLocationRef.code }}</span>
+          </dd>
+          <dt><span>Name</span></dt>
+          <dd>
+            <span>{{ storageLocationRef.name }}</span>
+          </dd>
+          <dt><span>Building</span></dt>
+          <dd>
+            <span>{{ storageLocationRef.building }}</span>
+          </dd>
+          <dt><span>Temperature Controlled</span></dt>
+          <dd>
+            <span>{{ storageLocationRef.temperatureControlled }}</span>
+          </dd>
+        </dl>
+
+        <button type="button" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left" />&nbsp;<span>Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/storage-location', storageLocationRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt" />&nbsp;<span>Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

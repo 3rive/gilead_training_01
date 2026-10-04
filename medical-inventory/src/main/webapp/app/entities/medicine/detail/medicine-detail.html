@@ -1,0 +1,94 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (medicine(); as medicineRef) {
+      <div>
+        <h2 data-cy="medicineDetailsHeading"><span>Medicine</span></h2>
+
+        <hr />
+
+        <mi-alert-error />
+
+        <mi-alert />
+
+        <dl class="row-md jh-entity-details">
+          <dt><span>ID</span></dt>
+          <dd>
+            <span>{{ medicineRef.id }}</span>
+          </dd>
+          <dt><span>Name</span></dt>
+          <dd>
+            <span>{{ medicineRef.name }}</span>
+          </dd>
+          <dt><span>Sku</span></dt>
+          <dd>
+            <span>{{ medicineRef.sku }}</span>
+          </dd>
+          <dt><span>Generic Name</span></dt>
+          <dd>
+            <span>{{ medicineRef.genericName }}</span>
+          </dd>
+          <dt><span>Dosage Form</span></dt>
+          <dd>
+            <span>{{
+              {
+                null: '',
+                TABLET: 'TABLET',
+                CAPSULE: 'CAPSULE',
+                SYRUP: 'SYRUP',
+                INJECTION: 'INJECTION',
+                CREAM: 'CREAM',
+                DROPS: 'DROPS',
+                INHALER: 'INHALER',
+                OTHER: 'OTHER',
+              }[medicineRef.dosageForm ?? 'null']
+            }}</span>
+          </dd>
+          <dt><span>Strength</span></dt>
+          <dd>
+            <span>{{ medicineRef.strength }}</span>
+          </dd>
+          <dt><span>Unit Price</span></dt>
+          <dd>
+            <span>{{ medicineRef.unitPrice }}</span>
+          </dd>
+          <dt><span>Reorder Level</span></dt>
+          <dd>
+            <span>{{ medicineRef.reorderLevel }}</span>
+          </dd>
+          <dt><span>Controlled Substance</span></dt>
+          <dd>
+            <span>{{ medicineRef.controlledSubstance }}</span>
+          </dd>
+          <dt><span>Description</span></dt>
+          <dd>
+            <span>{{ medicineRef.description }}</span>
+          </dd>
+          <dt><span>Category</span></dt>
+          <dd>
+            @if (medicine()!.category) {
+              <div>
+                <a [routerLink]="['/category', medicine()!.category?.id, 'view']">{{ medicineRef.category?.name }}</a>
+              </div>
+            }
+          </dd>
+          <dt><span>Supplier</span></dt>
+          <dd>
+            @if (medicine()!.supplier) {
+              <div>
+                <a [routerLink]="['/supplier', medicine()!.supplier?.id, 'view']">{{ medicineRef.supplier?.name }}</a>
+              </div>
+            }
+          </dd>
+        </dl>
+
+        <button type="button" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left" />&nbsp;<span>Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/medicine', medicineRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt" />&nbsp;<span>Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

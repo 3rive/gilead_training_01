@@ -1,0 +1,197 @@
+<div>
+  <h2 id="page-heading" data-cy="MedicineHeading">
+    <span>Medicines</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading()">
+        <fa-icon icon="sync" [animation]="isLoading() ? 'spin' : undefined" />
+        <span>Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-medicine"
+        [routerLink]="['/medicine/new']"
+      >
+        <fa-icon icon="plus" />
+        <span>Create a new Medicine</span>
+      </button>
+    </div>
+  </h2>
+
+  <mi-alert-error />
+
+  <mi-alert />
+
+  @if (medicines().length === 0) {
+    <div class="alert alert-warning" id="no-result">
+      <span>No Medicines found</span>
+    </div>
+  } @else {
+    <div class="table-responsive table-entities" id="entities">
+      <table class="table table-striped" aria-describedby="page-heading">
+        <thead>
+          <tr miSort [(sortState)]="sortState" (sortChange)="navigateToWithComponentValues($event)">
+            <th scope="col" miSortBy="id">
+              <div class="d-flex">
+                <span>ID</span>
+                <fa-icon class="p-1" icon="sort" />
+              </div>
+            </th>
+            <th scope="col" miSortBy="name">
+              <div class="d-flex">
+                <span>Name</span>
+                <fa-icon class="p-1" icon="sort" />
+              </div>
+            </th>
+            <th scope="col" miSortBy="sku">
+              <div class="d-flex">
+                <span>Sku</span>
+                <fa-icon class="p-1" icon="sort" />
+              </div>
+            </th>
+            <th scope="col" miSortBy="genericName">
+              <div class="d-flex">
+                <span>Generic Name</span>
+                <fa-icon class="p-1" icon="sort" />
+              </div>
+            </th>
+            <th scope="col" miSortBy="dosageForm">
+              <div class="d-flex">
+                <span>Dosage Form</span>
+                <fa-icon class="p-1" icon="sort" />
+              </div>
+            </th>
+            <th scope="col" miSortBy="strength">
+              <div class="d-flex">
+                <span>Strength</span>
+                <fa-icon class="p-1" icon="sort" />
+              </div>
+            </th>
+            <th scope="col" miSortBy="unitPrice">
+              <div class="d-flex">
+                <span>Unit Price</span>
+                <fa-icon class="p-1" icon="sort" />
+              </div>
+            </th>
+            <th scope="col" miSortBy="reorderLevel">
+              <div class="d-flex">
+                <span>Reorder Level</span>
+                <fa-icon class="p-1" icon="sort" />
+              </div>
+            </th>
+            <th scope="col" miSortBy="controlledSubstance">
+              <div class="d-flex">
+                <span>Controlled Substance</span>
+                <fa-icon class="p-1" icon="sort" />
+              </div>
+            </th>
+            <th scope="col" miSortBy="description">
+              <div class="d-flex">
+                <span>Description</span>
+                <fa-icon class="p-1" icon="sort" />
+              </div>
+            </th>
+            <th scope="col" miSortBy="category.name">
+              <div class="d-flex">
+                <span>Category</span>
+                <fa-icon class="p-1" icon="sort" />
+              </div>
+            </th>
+            <th scope="col" miSortBy="supplier.name">
+              <div class="d-flex">
+                <span>Supplier</span>
+                <fa-icon class="p-1" icon="sort" />
+              </div>
+            </th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (medicine of medicines(); track trackId(medicine)) {
+            <tr data-cy="entityTable">
+              <td>
+                <a [routerLink]="['/medicine', medicine.id, 'view']">{{ medicine.id }}</a>
+              </td>
+              <td>{{ medicine.name }}</td>
+              <td>{{ medicine.sku }}</td>
+              <td>{{ medicine.genericName }}</td>
+              <td>
+                {{
+                  {
+                    null: '',
+                    TABLET: 'TABLET',
+                    CAPSULE: 'CAPSULE',
+                    SYRUP: 'SYRUP',
+                    INJECTION: 'INJECTION',
+                    CREAM: 'CREAM',
+                    DROPS: 'DROPS',
+                    INHALER: 'INHALER',
+                    OTHER: 'OTHER',
+                  }[medicine.dosageForm ?? 'null']
+                }}
+              </td>
+              <td>{{ medicine.strength }}</td>
+              <td>{{ medicine.unitPrice }}</td>
+              <td>{{ medicine.reorderLevel }}</td>
+              <td>{{ medicine.controlledSubstance }}</td>
+              <td>{{ medicine.description }}</td>
+              <td>
+                @if (medicine.category) {
+                  <div>
+                    <a [routerLink]="['/category', medicine.category.id, 'view']">{{ medicine.category.name }}</a>
+                  </div>
+                }
+              </td>
+              <td>
+                @if (medicine.supplier) {
+                  <div>
+                    <a [routerLink]="['/supplier', medicine.supplier.id, 'view']">{{ medicine.supplier.name }}</a>
+                  </div>
+                }
+              </td>
+              <td class="text-end">
+                <div class="btn-group">
+                  <a [routerLink]="['/medicine', medicine.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                    <fa-icon icon="eye" />
+                    <span class="d-none d-md-inline">View</span>
+                  </a>
+
+                  <a [routerLink]="['/medicine', medicine.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+                    <fa-icon icon="pencil-alt" />
+                    <span class="d-none d-md-inline">Edit</span>
+                  </a>
+
+                  <button type="button" (click)="delete(medicine)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                    <fa-icon icon="times" />
+                    <span class="d-none d-md-inline">Delete</span>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+  @if (medicines().length > 0) {
+    <div>
+      <div class="d-flex justify-content-center">
+        <mi-item-count [params]="{ page: page(), totalItems: totalItems(), itemsPerPage: itemsPerPage() }" />
+      </div>
+
+      <div class="d-flex justify-content-center">
+        <ngb-pagination
+          [collectionSize]="totalItems()"
+          [page]="page()"
+          [pageSize]="itemsPerPage()"
+          [maxSize]="5"
+          [rotate]="true"
+          [boundaryLinks]="true"
+          (pageChange)="navigateToPage($event)"
+        />
+      </div>
+    </div>
+  }
+</div>

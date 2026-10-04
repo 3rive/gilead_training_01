@@ -1,0 +1,129 @@
+<div>
+  <h2 id="page-heading" data-cy="SupplierHeading">
+    <span>Suppliers</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading()">
+        <fa-icon icon="sync" [animation]="isLoading() ? 'spin' : undefined" />
+        <span>Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-supplier"
+        [routerLink]="['/supplier/new']"
+      >
+        <fa-icon icon="plus" />
+        <span>Create a new Supplier</span>
+      </button>
+    </div>
+  </h2>
+
+  <mi-alert-error />
+
+  <mi-alert />
+
+  @if (suppliers().length === 0) {
+    <div class="alert alert-warning" id="no-result">
+      <span>No Suppliers found</span>
+    </div>
+  } @else {
+    <div class="table-responsive table-entities" id="entities">
+      <table class="table table-striped" aria-describedby="page-heading">
+        <thead>
+          <tr miSort [(sortState)]="sortState" (sortChange)="navigateToWithComponentValues($event)">
+            <th scope="col" miSortBy="id">
+              <div class="d-flex">
+                <span>ID</span>
+                <fa-icon class="p-1" icon="sort" />
+              </div>
+            </th>
+            <th scope="col" miSortBy="name">
+              <div class="d-flex">
+                <span>Name</span>
+                <fa-icon class="p-1" icon="sort" />
+              </div>
+            </th>
+            <th scope="col" miSortBy="contactName">
+              <div class="d-flex">
+                <span>Contact Name</span>
+                <fa-icon class="p-1" icon="sort" />
+              </div>
+            </th>
+            <th scope="col" miSortBy="email">
+              <div class="d-flex">
+                <span>Email</span>
+                <fa-icon class="p-1" icon="sort" />
+              </div>
+            </th>
+            <th scope="col" miSortBy="phone">
+              <div class="d-flex">
+                <span>Phone</span>
+                <fa-icon class="p-1" icon="sort" />
+              </div>
+            </th>
+            <th scope="col" miSortBy="active">
+              <div class="d-flex">
+                <span>Active</span>
+                <fa-icon class="p-1" icon="sort" />
+              </div>
+            </th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (supplier of suppliers(); track trackId(supplier)) {
+            <tr data-cy="entityTable">
+              <td>
+                <a [routerLink]="['/supplier', supplier.id, 'view']">{{ supplier.id }}</a>
+              </td>
+              <td>{{ supplier.name }}</td>
+              <td>{{ supplier.contactName }}</td>
+              <td>{{ supplier.email }}</td>
+              <td>{{ supplier.phone }}</td>
+              <td>{{ supplier.active }}</td>
+              <td class="text-end">
+                <div class="btn-group">
+                  <a [routerLink]="['/supplier', supplier.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                    <fa-icon icon="eye" />
+                    <span class="d-none d-md-inline">View</span>
+                  </a>
+
+                  <a [routerLink]="['/supplier', supplier.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+                    <fa-icon icon="pencil-alt" />
+                    <span class="d-none d-md-inline">Edit</span>
+                  </a>
+
+                  <button type="button" (click)="delete(supplier)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                    <fa-icon icon="times" />
+                    <span class="d-none d-md-inline">Delete</span>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+  @if (suppliers().length > 0) {
+    <div>
+      <div class="d-flex justify-content-center">
+        <mi-item-count [params]="{ page: page(), totalItems: totalItems(), itemsPerPage: itemsPerPage() }" />
+      </div>
+
+      <div class="d-flex justify-content-center">
+        <ngb-pagination
+          [collectionSize]="totalItems()"
+          [page]="page()"
+          [pageSize]="itemsPerPage()"
+          [maxSize]="5"
+          [rotate]="true"
+          [boundaryLinks]="true"
+          (pageChange)="navigateToPage($event)"
+        />
+      </div>
+    </div>
+  }
+</div>

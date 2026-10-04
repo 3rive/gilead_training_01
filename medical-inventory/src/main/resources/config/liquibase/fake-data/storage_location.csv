@@ -1,0 +1,5 @@
+id;code;name;building;temperature_controlled
+1;PH-A1;Main pharmacy shelf A;Outpatient pharmacy;false
+2;PH-COLD;Pharmacy cold room;Outpatient pharmacy;true
+3;WH-01;Central warehouse;Distribution center;false
+4;ER-CAB;Emergency cabinet;Emergency department;false

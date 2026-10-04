@@ -1,0 +1,105 @@
+/**
+ * Medical Inventory — JHipster monolith.
+ * Tracks medicines, suppliers, storage locations, stock lots, and movements.
+ */
+application {
+  config {
+    baseName medicalinventory
+    applicationType monolith
+    packageName com.gilead.medicalinventory
+    authenticationType jwt
+    databaseType sql
+    devDatabaseType h2Disk
+    prodDatabaseType postgresql
+    buildTool maven
+    cacheProvider caffeine
+    enableHibernateCache true
+    clientFramework angular
+    clientTheme flatly
+    testFrameworks []
+    enableTranslation false
+    nativeLanguage en
+    serverPort 8080
+    jhiPrefix mi
+  }
+  entities *
+}
+
+dto * with mapstruct
+service * with serviceImpl
+pagination * with pagination
+
+enum DosageForm {
+  TABLET,
+  CAPSULE,
+  SYRUP,
+  INJECTION,
+  CREAM,
+  DROPS,
+  INHALER,
+  OTHER
+}
+
+enum MovementType {
+  RECEIPT,
+  DISPENSE,
+  ADJUSTMENT,
+  RETURN,
+  EXPIRED,
+  TRANSFER
+}
+
+entity Category {
+  name String required unique minlength(2) maxlength(80)
+  description String maxlength(255)
+}
+
+entity Supplier {
+  name String required minlength(2) maxlength(120)
+  contactName String maxlength(80)
+  email String maxlength(100)
+  phone String maxlength(30)
+  active Boolean required
+}
+
+entity StorageLocation {
+  code String required unique minlength(2) maxlength(20)
+  name String required minlength(2) maxlength(80)
+  building String maxlength(80)
+  temperatureControlled Boolean required
+}
+
+entity Medicine {
+  name String required minlength(2) maxlength(120)
+  sku String required unique minlength(2) maxlength(40)
+  genericName String maxlength(120)
+  dosageForm DosageForm required
+  strength String maxlength(40)
+  unitPrice BigDecimal required min(0)
+  reorderLevel Integer required min(0)
+  controlledSubstance Boolean required
+  description TextBlob
+}
+
+entity StockLot {
+  batchNumber String required minlength(1) maxlength(40)
+  expiryDate LocalDate required
+  quantityOnHand Integer required min(0)
+  receivedDate LocalDate required
+}
+
+entity StockMovement {
+  movementType MovementType required
+  quantity Integer required
+  occurredAt Instant required
+  reason String maxlength(255)
+  referenceNumber String maxlength(40)
+}
+
+relationship ManyToOne {
+  Medicine{category(name) required} to Category
+  Medicine{supplier(name)} to Supplier
+  StockLot{medicine(name) required} to Medicine
+  StockLot{storageLocation(name) required} to StorageLocation
+  StockMovement{stockLot(batchNumber) required} to StockLot
+}

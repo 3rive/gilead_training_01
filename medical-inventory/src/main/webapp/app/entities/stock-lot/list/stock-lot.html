@@ -1,0 +1,148 @@
+<div>
+  <h2 id="page-heading" data-cy="StockLotHeading">
+    <span>Stock Lots</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading()">
+        <fa-icon icon="sync" [animation]="isLoading() ? 'spin' : undefined" />
+        <span>Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-stock-lot"
+        [routerLink]="['/stock-lot/new']"
+      >
+        <fa-icon icon="plus" />
+        <span>Create a new Stock Lot</span>
+      </button>
+    </div>
+  </h2>
+
+  <mi-alert-error />
+
+  <mi-alert />
+
+  @if (stockLots().length === 0) {
+    <div class="alert alert-warning" id="no-result">
+      <span>No Stock Lots found</span>
+    </div>
+  } @else {
+    <div class="table-responsive table-entities" id="entities">
+      <table class="table table-striped" aria-describedby="page-heading">
+        <thead>
+          <tr miSort [(sortState)]="sortState" (sortChange)="navigateToWithComponentValues($event)">
+            <th scope="col" miSortBy="id">
+              <div class="d-flex">
+                <span>ID</span>
+                <fa-icon class="p-1" icon="sort" />
+              </div>
+            </th>
+            <th scope="col" miSortBy="batchNumber">
+              <div class="d-flex">
+                <span>Batch Number</span>
+                <fa-icon class="p-1" icon="sort" />
+              </div>
+            </th>
+            <th scope="col" miSortBy="expiryDate">
+              <div class="d-flex">
+                <span>Expiry Date</span>
+                <fa-icon class="p-1" icon="sort" />
+              </div>
+            </th>
+            <th scope="col" miSortBy="quantityOnHand">
+              <div class="d-flex">
+                <span>Quantity On Hand</span>
+                <fa-icon class="p-1" icon="sort" />
+              </div>
+            </th>
+            <th scope="col" miSortBy="receivedDate">
+              <div class="d-flex">
+                <span>Received Date</span>
+                <fa-icon class="p-1" icon="sort" />
+              </div>
+            </th>
+            <th scope="col" miSortBy="medicine.name">
+              <div class="d-flex">
+                <span>Medicine</span>
+                <fa-icon class="p-1" icon="sort" />
+              </div>
+            </th>
+            <th scope="col" miSortBy="storageLocation.name">
+              <div class="d-flex">
+                <span>Storage Location</span>
+                <fa-icon class="p-1" icon="sort" />
+              </div>
+            </th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (stockLot of stockLots(); track trackId(stockLot)) {
+            <tr data-cy="entityTable">
+              <td>
+                <a [routerLink]="['/stock-lot', stockLot.id, 'view']">{{ stockLot.id }}</a>
+              </td>
+              <td>{{ stockLot.batchNumber }}</td>
+              <td>{{ stockLot.expiryDate | formatMediumDate }}</td>
+              <td>{{ stockLot.quantityOnHand }}</td>
+              <td>{{ stockLot.receivedDate | formatMediumDate }}</td>
+              <td>
+                @if (stockLot.medicine) {
+                  <div>
+                    <a [routerLink]="['/medicine', stockLot.medicine.id, 'view']">{{ stockLot.medicine.name }}</a>
+                  </div>
+                }
+              </td>
+              <td>
+                @if (stockLot.storageLocation) {
+                  <div>
+                    <a [routerLink]="['/storage-location', stockLot.storageLocation.id, 'view']">{{ stockLot.storageLocation.name }}</a>
+                  </div>
+                }
+              </td>
+              <td class="text-end">
+                <div class="btn-group">
+                  <a [routerLink]="['/stock-lot', stockLot.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                    <fa-icon icon="eye" />
+                    <span class="d-none d-md-inline">View</span>
+                  </a>
+
+                  <a [routerLink]="['/stock-lot', stockLot.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+                    <fa-icon icon="pencil-alt" />
+                    <span class="d-none d-md-inline">Edit</span>
+                  </a>
+
+                  <button type="button" (click)="delete(stockLot)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                    <fa-icon icon="times" />
+                    <span class="d-none d-md-inline">Delete</span>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+  @if (stockLots().length > 0) {
+    <div>
+      <div class="d-flex justify-content-center">
+        <mi-item-count [params]="{ page: page(), totalItems: totalItems(), itemsPerPage: itemsPerPage() }" />
+      </div>
+
+      <div class="d-flex justify-content-center">
+        <ngb-pagination
+          [collectionSize]="totalItems()"
+          [page]="page()"
+          [pageSize]="itemsPerPage()"
+          [maxSize]="5"
+          [rotate]="true"
+          [boundaryLinks]="true"
+          (pageChange)="navigateToPage($event)"
+        />
+      </div>
+    </div>
+  }
+</div>

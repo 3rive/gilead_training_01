@@ -1,0 +1,51 @@
+{
+  "annotations": {
+    "changelogDate": "20231218132442"
+  },
+  "applications": ["medicalinventory"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "movementType",
+      "fieldType": "MovementType",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "RECEIPT,DISPENSE,ADJUSTMENT,RETURN,EXPIRED,TRANSFER"
+    },
+    {
+      "fieldName": "quantity",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "occurredAt",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "reason",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "referenceNumber",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "40"
+    }
+  ],
+  "name": "StockMovement",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityField": "batchNumber",
+      "otherEntityName": "stockLot",
+      "relationshipName": "stockLot",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

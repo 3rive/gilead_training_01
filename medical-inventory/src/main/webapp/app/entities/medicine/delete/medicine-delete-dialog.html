@@ -1,0 +1,20 @@
+@if (medicine) {
+  <form name="deleteForm" (ngSubmit)="confirmDelete(medicine.id)">
+    <div class="modal-header">
+      <h4 class="modal-title" data-cy="medicineDeleteDialogHeading">Confirm delete operation</h4>
+    </div>
+
+    <div class="modal-body">
+      <mi-alert-error />
+      <p id="mi-delete-medicine-heading">Are you sure you want to delete Medicine {{ medicine.id }}?</p>
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" (click)="cancel()"><fa-icon icon="ban" />&nbsp;<span>Cancel</span></button>
+
+      <button id="mi-confirm-delete-medicine" data-cy="entityConfirmDeleteButton" type="submit" class="btn btn-danger">
+        <fa-icon icon="times" />&nbsp;<span>Delete</span>
+      </button>
+    </div>
+  </form>
+}

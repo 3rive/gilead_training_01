@@ -1,0 +1,26 @@
+{
+  "generator-jhipster": {
+    "applicationType": "monolith",
+    "authenticationType": "jwt",
+    "baseName": "medicalinventory",
+    "buildTool": "maven",
+    "cacheProvider": "caffeine",
+    "clientFramework": "angular",
+    "clientTheme": "flatly",
+    "creationTimestamp": 1702905522202,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "enableHibernateCache": true,
+    "enableTranslation": false,
+    "entities": ["Category", "Supplier", "StorageLocation", "Medicine", "StockLot", "StockMovement"],
+    "jhiPrefix": "mi",
+    "jhipsterVersion": "9.4.0",
+    "jwtSecretKey": "YjU5NmYxODkzMjM4MzExZWFlZTMyMGU5ZGFjZjViMzZmYWUzZGYxZTBlZjBiNTk1YmUzMDdhOGVlNjYxYTlkZTk4M2ViMzU2ODBhYjc5NzExZTM3MjZiZDg1Y2Q0Nzg2MTBkOWNlMzEzZGM3MGNiNGE5NGJiNjM1ZTc1YTE5M2U=",
+    "lastLiquibaseTimestamp": 1702905882000,
+    "nativeLanguage": "en",
+    "packageName": "com.gilead.medicalinventory",
+    "prodDatabaseType": "postgresql",
+    "serverPort": "8080",
+    "testFrameworks": []
+  }
+}

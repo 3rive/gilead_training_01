@@ -1,0 +1,9 @@
+id;name;sku;generic_name;dosage_form;strength;unit_price;reorder_level;controlled_substance;description;category_id;supplier_id
+1;Amoxicillin;AMX-500-CAP;Amoxicillin;CAPSULE;500 mg;0.42;200;false;../fake-data/blob/amoxicillin.txt;2;3
+2;Lisinopril;LIS-10-TAB;Lisinopril;TABLET;10 mg;0.18;150;false;../fake-data/blob/lisinopril.txt;3;3
+3;Albuterol inhaler;ALB-90-INH;Albuterol;INHALER;90 mcg;18.50;40;false;../fake-data/blob/albuterol.txt;4;1
+4;Metformin;MET-500-TAB;Metformin hydrochloride;TABLET;500 mg;0.11;300;false;../fake-data/blob/metformin.txt;5;3
+5;Ibuprofen;IBU-200-TAB;Ibuprofen;TABLET;200 mg;0.08;400;false;../fake-data/blob/ibuprofen.txt;1;2
+6;Hydrocortisone cream;HYD-1-CRM;Hydrocortisone;CREAM;1%;3.25;60;false;../fake-data/blob/hydrocortisone.txt;6;2
+7;Morphine injection;MOR-10-INJ;Morphine sulfate;INJECTION;10 mg/mL;4.80;25;true;../fake-data/blob/morphine.txt;1;4
+8;Insulin glargine;INS-100-INJ;Insulin glargine;INJECTION;100 units/mL;24.90;30;false;../fake-data/blob/insulin-glargine.txt;5;1

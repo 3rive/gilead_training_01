@@ -1,0 +1,65 @@
+<div class="row">
+  <div class="col-lg-8">
+    <h1 class="display-4">Medical Inventory</h1>
+    <p class="lead">Track medicines, batches, and every receipt or dispense that changes on-hand stock.</p>
+
+    <div>
+      @if (account(); as accountRef) {
+        <div class="alert alert-success">
+          <span id="home-logged-message">You are logged in as user &quot;{{ accountRef.login }}&quot;.</span>
+        </div>
+      } @else {
+        <div class="alert alert-warning">
+          <span>Sign in to manage inventory. </span>
+          <a class="alert-link" (click)="login()">Sign in</a>
+          <span>
+            with the default accounts:<br />- Administrator (login=&quot;admin&quot; and password=&quot;admin&quot;) <br />- User
+            (login=&quot;user&quot; and password=&quot;user&quot;).</span
+          >
+        </div>
+      }
+    </div>
+  </div>
+</div>
+
+<div class="row mt-3">
+  <div class="col-md-4 mb-3">
+    <div class="card h-100">
+      <div class="card-body">
+        <h2 class="h5 card-title">Medicines</h2>
+        <p class="card-text">Catalog of SKUs, dosage forms, prices, and reorder levels.</p>
+        <a class="btn btn-primary" routerLink="/medicine">Open medicines</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 mb-3">
+    <div class="card h-100">
+      <div class="card-body">
+        <h2 class="h5 card-title">Stock lots</h2>
+        <p class="card-text">On-hand batches, expiry dates, and the shelf or cold room that holds them.</p>
+        <a class="btn btn-primary" routerLink="/stock-lot">Open stock lots</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 mb-3">
+    <div class="card h-100">
+      <div class="card-body">
+        <h2 class="h5 card-title">Movements</h2>
+        <p class="card-text">Receipts, dispenses, adjustments, returns, expiries, and transfers.</p>
+        <a class="btn btn-primary" routerLink="/stock-movement">Open movements</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-4 mb-3">
+    <a class="btn btn-outline-secondary w-100" routerLink="/category">Categories</a>
+  </div>
+  <div class="col-md-4 mb-3">
+    <a class="btn btn-outline-secondary w-100" routerLink="/supplier">Suppliers</a>
+  </div>
+  <div class="col-md-4 mb-3">
+    <a class="btn btn-outline-secondary w-100" routerLink="/storage-location">Storage locations</a>
+  </div>
+</div>
